@@ -37,13 +37,16 @@ itself make the Python server run online or install the application on a phone.
 
 ## Activation and the Etsy PDF
 
-No product activation code, license-key validation or Etsy activation PDF is
-included. Authentication, caregiver invitation codes and authenticator recovery
-codes are account-security features, not product activation codes.
+The app requests the purchase code on first use and remembers activation in
+the current browser. The public source includes a SHA-256 digest only, never
+the plain-text purchase code. Keep the Etsy access PDF separate from GitHub.
 
-A code placed only in a separate PDF does not restrict application access,
-because this application does not validate purchase or activation codes.
-Keep the separate Etsy delivery PDF outside the source package.
+This is a browser-side access screen, not server license verification. Someone
+who edits the public JavaScript can bypass it. It does not validate Etsy orders,
+issue individual buyer licenses or revoke access remotely.
+
+Upload the extracted package contents to the repository root to deploy this
+version. GitHub Pages supports the static app, not the Python account server.
 
 ## Manual
 

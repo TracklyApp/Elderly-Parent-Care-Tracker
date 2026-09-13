@@ -1,0 +1,5 @@
+body.activation-pending>aside,body.activation-pending>main{display:none}
+#activationGate{min-height:100dvh;display:grid;place-items:center;padding:28px 18px;background:var(--bg)}
+.activation-card{width:min(100%,480px);padding:36px;border:1px solid var(--line);border-radius:22px;background:var(--soft);box-shadow:0 18px 70px #18332612}
+.activation-card h1{font-size:29px;margin:25px 0 12px}.activation-card p{font-size:13px;color:var(--muted)}.activation-card input{font-size:16px;letter-spacing:1px;min-height:48px}.activation-card .primary{width:100%;margin-top:12px;min-height:48px}.activation-card .form-error{min-height:20px}.activation-card small{display:block;margin-top:22px;color:var(--muted);line-height:1.7}.activation-card details{margin-top:22px;font-size:12px}.activation-card summary{cursor:pointer;color:var(--green)}
+@media(max-width:500px){.activation-card{padding:26px 22px}.activation-card h1{font-size:25px}}

@@ -23,7 +23,7 @@ DB = ROOT / 'data' / 'kindred.sqlite3'
 ORIGIN = 'http://localhost:8877'
 SECURE = False
 STATIC = {'/':'index.html','/index.html':'index.html','/style.css':'style.css','/app.js':'app.js','/care-core.js':'care-core.js','/family.js':'family.js'}
-STATIC.update({('/'+name):name for name in ('guide.js','guide-data.js','guide.css','output/pdf/Kindred-User-Guide.pdf','database.js','bootstrap.js','storage.js','premium-core.js','premium.js','premium.css','design.js','design.css','mobile.js','mobile.css','theme.js','theme.css','examples-data.js','examples.js','enhancements-core.js','enhancements.js','sw.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png')})
+STATIC.update({('/'+name):name for name in ('activation.js','activation.css','guide.js','guide-data.js','guide.css','output/pdf/Kindred-User-Guide.pdf','database.js','bootstrap.js','storage.js','premium-core.js','premium.js','premium.css','design.js','design.css','mobile.js','mobile.css','theme.js','theme.css','examples-data.js','examples.js','enhancements-core.js','enhancements.js','sw.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png')})
 
 def connect():
     db=sqlite3.connect(DB,timeout=15);db.row_factory=sqlite3.Row;db.execute('PRAGMA foreign_keys=ON');return db

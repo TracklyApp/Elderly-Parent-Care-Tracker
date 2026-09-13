@@ -114,7 +114,7 @@ document.addEventListener('change',event=>{if(['textScale','highContrast'].inclu
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;});
 window.addEventListener('online',()=>{if(currentUser)api('me').then(attachAccount).catch(()=>syncStatus('Reconnect to sync your saved changes'));});
 window.addEventListener('offline',()=>syncStatus('Offline · changes stay on this device'));
-if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('/sw.js').catch(()=>toast('Offline installation is unavailable in this browser.'));
+if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>toast('Offline installation is unavailable in this browser.'));
 function restoreOfflineSession(){if(currentUser)return;try{const last=JSON.parse(localStorage.getItem('kindred-last-account'));const cache=last&&JSON.parse(localStorage.getItem('kindred-account-'+last.id));if(cache){Care.validate(cache.state);familyData=Care.upgrade(cache.state);currentUser={...last,csrf:''};serverRevision=cache.revision;syncDirty=cache.pending;syncBase=cache.base||structuredClone(familyData);activeProfileId=familyData.profiles[0].id;render();syncStatus('Offline · changes stay on this device');}}catch{}}
 if(!navigator.onLine)restoreOfflineSession();
 else if(location.protocol!=='file:')api('health').catch(restoreOfflineSession);

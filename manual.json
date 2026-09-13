@@ -3,77 +3,420 @@
   "subtitle": "Everyday care, clearly organized",
   "edition": "Local application | September 2026",
   "sections": [
-    {"id":"start","title":"Open Kindred and get started","intro":"Kindred keeps care records for one or more parents. All instructions in this guide refer to the current local application.","blocks":[
-      {"title":"Recommended: open through the local launcher","steps":["Open the Elderly Parent Care Tracker folder on your computer.","Double-click Start Kindred.cmd and leave its window running.","Open Chrome or Edge and enter http://localhost:8877 in the address bar.","Choose a parent under Care profile. Use Overview for a summary or Today for the day's activities."]},
-      {"title":"First-time setup","steps":["On Overview, select Set up care profile.","Enter the parent's name and your caregiver name. Continue to emergency information.","Add known allergies and emergency contacts. Leave unknown information empty.","Add preferences, routine, communication needs and goals agreed with the family or clinician. Select Finish setup."]},
-      {"title":"Keep using the same browser and address","text":"Opening index.html directly supports local records, but installation and server account features require the launcher. The file address and localhost have separate browser storage. Switching browsers or addresses does not automatically transfer your records. Export a backup first if you plan to move."},
-      {"title":"Try the examples","text":"Choose Demo - Eleanor Brooks in Care profile. It has exactly 20 fictional records in total: one journal entry in each of 13 categories, plus seven medication, task, shift, question and handoff records. The demo is read-only and separate from saved family data. Use Back to my care to return."}
-    ]},
-    {"id":"profiles","title":"Parents, photos and preferences","intro":"Each parent has a separate journal, medication schedule, care tasks and handoff history. Always check the selected Care profile before recording care.","blocks":[
-      {"title":"Add a parent and a photo","steps":["Open Family & Accounts and select Add parent.","Enter the name. For a photo, choose a JPEG or PNG file up to 5 MB.","Check the photo preview, then add known allergies and emergency information.","Select Save and wait for the form to close. The new profile becomes selected."]},
-      {"title":"Edit or remove a photo","steps":["Select the parent, then open Family & Accounts > Edit preferences & photo.","Choose a replacement photo, or select Remove current photo to remove it. To remove only, leave the file picker empty.","Update preferences, daily routine, care goals or communication needs, then Save."]},
-      {"title":"Edit the basic profile","text":"Use the Parent profile / Edit button in the sidebar on a computer. You can also review basic details through Set up care profile in Overview or Settings & Security. Photos are cropped to a square and stored with the profile, including in family backups."},
-      {"title":"Delete a profile carefully","steps":["In Family & Accounts, select Delete profile next to the correct parent.","Review the name and record count. Use Download backup first if you want a copy.","Type the parent's exact name, then select Delete profile."]},
-      {"title":"What deletion means","text":"Deletion removes the active profile, its photo and associated care records. Existing backups and server audit history remain; attached server files are not erased by this action. If it was the last profile, Kindred creates a new empty Parent profile. View-only users and the demo cannot delete profiles."}
-    ]},
-    {"id":"today","title":"Today and quick recording","intro":"Today combines scheduled medication, care tasks and appointments in chronological order, with the current caregiver shift when one is scheduled.","blocks":[
-      {"title":"Read the activity status","bullets":["Needs a record: the scheduled time has passed without a record. This does not prove that care was missed.","Upcoming: the activity is scheduled for later.","Recorded: a dose or task has an administration/completion record.","Earlier unfinished one-time tasks and appointments carry forward. Recurring tasks are shown for the current day."]},
-      {"title":"Complete an activity","steps":["Open Today and use Show to filter the list.","Select Record dose for medication or Complete for a care task when available.","Review the details and enter the caregiver's name if requested. Confirm the record.","For an appointment, Mark complete changes its completion status. Use Calendar & Reminders to plan new activities."]},
-      {"title":"Use Quick record","bullets":["Water: enter the amount consumed in ml.","Meal: select how much was eaten and add an observation if needed.","Mood: select the observed mood and add context.","Sleep: record the hours slept and any observations.","Vital signs: opens the structured measurement form.","Care note: opens a daily care journal entry."]},
-      {"title":"Before saving","text":"Review the parent, time and caregiver. Quick records describe care that has already occurred; future times are rejected. Select Include in caregiver handoff when the next caregiver should see the update. Medication administration is recorded against its schedule, not through a generic quick-care note."}
-    ]},
-    {"id":"medication","title":"Medication schedules and stock","intro":"Enter the actual prescription and instructions supplied by the clinician. Kindred organizes records; it does not choose medication, doses or treatment.","blocks":[
-      {"title":"Create a medication plan","steps":["Choose Medication Log from Care Journal.","Select Add prescribed medication and enter the medication name and prescribed dose.","Enter daily times using 24-hour format, separated by commas, such as 08:00, 20:00.","Set the start date, optional end date, prescription instructions and optional renewal date, then Save.","Use Days & stock to select prescribed weekdays and configure stock tracking."]},
-      {"title":"Record an administration","steps":["Open Today or Medication Log and locate the scheduled dose.","Select Record dose, choose Taken or Skipped and confirm the caregiver.","For a skipped dose, provide a reason. Future and duplicate administrations are not allowed."]},
-      {"title":"Correct a record","text":"In Medication Log, find Correct an administration and select Correct beside the record. Enter the corrected status and note, with a reason for the correction. The original administration details remain in the history."},
-      {"title":"Track stock and stop a plan","text":"Days & stock sets the starting amount, units per administration and low-stock threshold. Add stock records a restock. These counts depend on accurate entries and corrections. Stopping a medication plan stops future scheduling while keeping its recorded history. Confirm medication changes with the clinician outside the app."}
-    ]},
-    {"id":"journal","title":"The care journal and search","intro":"Choose a category from Care Journal, then Add journal entry. Enter a title, date and time, caregiver and details. Category-specific fields appear when relevant.","blocks":[
-      {"title":"What goes in each category","bullets":["Medication Log: medication notes; scheduled administrations are recorded separately.","Appointments: visits and appointment notes.","Vital Signs: blood pressure, pulse, temperature, oxygen saturation and weight.","Symptoms: observations and their context.","Meals & Hydration: food and fluid intake.","Daily Care: everyday assistance and care updates.","Mood & Behavior: observed changes and context.","Sleep: sleep duration and observations.","Falls & Incidents: what happened and relevant details.","Doctor Notes: clinician notes and instructions you record.","Expenses: care-related amounts and currency/unit.","Care Team: caregiver and professional contact notes.","Documents Log: descriptions and storage locations for paperwork."]},
-      {"title":"Find an earlier entry","steps":["Use the category's search box for a quick search within that category.","For a wider search, open Search records.","Combine text, category, caregiver, From / To dates and Handoff entries only.","Use Clear filters to start again. If more than 200 records match, narrow the filters."]},
-      {"title":"Edit and history","text":"Use the Edit control on an entry to correct it. Deleting a journal entry asks for a reason. History & Recovery shows recorded changes and offers a text filter for caregiver, action, reason or detail. Local history belongs to this browser; server audit is maintained by the family server."}
-    ]},
-    {"id":"planning","title":"Calendar, tasks and caregiver shifts","intro":"Use scheduled tasks to make responsibilities visible. A caregiver name in a task is a label; it does not itself send an invitation or create an account.","blocks":[
-      {"title":"Add a task or reminder","steps":["Open Calendar & Reminders and choose Add task or reminder.","Enter the title, type, date/time and assigned caregiver.","Choose no repeat, daily or weekly. Add useful instructions and Save.","Select a calendar date to review tasks, appointments and medication for that day."]},
-      {"title":"Schedule a caregiver shift","steps":["Open Caregiver Shifts and add a shift.","Enter the responsible caregiver, optional backup caregiver, start and end times.","Add handoff responsibilities and Save. The end must be after the start.","Review or edit upcoming shifts. Overlapping shifts for the same caregiver are rejected."]},
-      {"title":"Reminders and calendar export","text":"Browser reminders require permission and work while Kindred is open. Export next 30 days downloads a calendar file for your calendar app; exported events include reminders. Updating Kindred does not update an already imported calendar file. Background reminders require a server account, browser support and the local server/computer to remain running and connected."},
-      {"title":"Time zones","text":"Settings & Security shows the care time zone used for server reminders. Journal forms and calendars use the device's local time. Keep these aligned and review the displayed date/time before saving."}
-    ]},
-    {"id":"handoff","title":"Hand over care with confidence","intro":"Caregiver Handoff collects the important details for the next person. The family should agree how and when to review it; the app is not an emergency alert service.","blocks":[
-      {"title":"Prepare useful notes","steps":["Select Include in caregiver handoff on journal entries that matter to the next caregiver.","Review medication administrations, remaining tasks and earlier unfinished activities.","Keep preferences, routine, communication needs and goals current in the personal care guide.","Edit an entry and clear its handoff checkbox when it no longer needs to appear in new summaries."]},
-      {"title":"Create a handoff","steps":["Open Caregiver Handoff and choose Prepare handoff.","Select or enter the next caregiver and add what needs special attention.","Save the handoff. Kindred keeps a dated snapshot of the summary at that time.","The receiving caregiver uses I have taken over care to confirm the takeover."]},
-      {"title":"Snapshot versus current summary","text":"A saved handoff snapshot stays as it was when prepared. Later journal edits change the current summary, not the old snapshot. With accounts, acceptance is restricted to the assigned recipient when one was specified."},
-      {"title":"Share a copy","text":"Copy summary copies the current summary to the clipboard when available. Download saves a text copy. Review it before sending it through your own chosen communication method. Kindred does not automatically message the family when you use these buttons."}
-    ]},
-    {"id":"reports","title":"Prepare a visit and create a PDF report","intro":"Prepare a Visit organizes consultation questions and shows measurement trends. Reports turns the selected records into a printable document.","blocks":[
-      {"title":"Before the appointment","steps":["Open Prepare a Visit and add questions for the doctor.","Add the clinician and visit date if useful. After the visit, record answers and mark questions Answered.","Review the available measurement charts and their recorded values. Missing measurements are not inferred."]},
-      {"title":"Create the report","steps":["Open Reports and select the correct parent.","Choose From and To dates, or use Last 7 days, Last 30 days or All dates.","Choose Full care report or Consultation brief.","Review the report, then select Print / Save PDF.","In the browser print window, select Save as PDF and choose a folder on your computer."]},
-      {"title":"Choose the format","bullets":["Full care report: care preferences, administration records, measurement trends and journal content for the chosen period.","Consultation brief: emergency information, current active medication plans, administration totals in the chosen period, open questions, goals, symptoms, incidents and measurements."]},
-      {"title":"Read the scope correctly","text":"Current medication plans and open questions reflect the profile now, not a historical prescription list. Reports summarize entered records and do not interpret measurements or recommend treatment. Dark Mode does not make the printed report's background dark."}
-    ]},
-    {"id":"documents","title":"Documents and emergency information","intro":"A document register entry and an attached file are different things. A register describes paperwork; an attachment stores a supported file on the family server.","blocks":[
-      {"title":"Record a document location","steps":["Open Documents Log and add a journal entry.","Describe the document and where to find it, such as a physical folder or a location you maintain.","Add relevant dates and the caregiver who recorded the information."]},
-      {"title":"Attach a document through the server","steps":["Open Kindred through the launcher and sign in to a family account.","Select the parent and ensure changes have synced.","In Documents Log, choose Attach a care document.","Select a PDF, PNG or JPEG up to 5 MB, add the clinic/date and upload.","Use the document controls to open/download or archive an attachment when available."]},
-      {"title":"Emergency information","text":"Open Emergency Information to view known allergies and contacts for the selected parent. Update these through the profile editor or guided setup. Keep a separate accessible emergency contact copy for times when the device or app is unavailable."},
-      {"title":"Backup coverage","text":"JSON family backups contain profile records and document register entries, but not uploaded server document files. Those files are included in the encrypted full server backup. Demo document examples are descriptions only, with no files attached."}
-    ]},
-    {"id":"backup","title":"Backups, storage and recovery","intro":"Records are stored locally in this browser using IndexedDB. On the first updated launch, existing Kindred localStorage records are copied into the database before the app starts. The original migration copy is retained.","blocks":[
-      {"title":"Download and check a backup","steps":["Select Backup in the header, or Download family backup in Settings & Security.","Choose a location outside the browser and verify that the JSON file was downloaded.","Use Check a backup file in Settings to validate its structure without importing it.","Keep dated copies. The displayed download-request date does not prove that a file was saved."]},
-      {"title":"Import a JSON backup","steps":["Export the current records first if you want to keep them.","Select Import and choose a Kindred JSON backup.","Review the replacement confirmation carefully: import replaces current family profiles; it does not merge them.","If signed in, this change also updates the shared family after synchronization."]},
-      {"title":"History and server restore points","text":"History & Recovery shows recent changes and can restore supported deleted records. Server accounts also have automatic restore points; restoring a family snapshot is an owner action and creates another revision. Encrypted full server backups need the server recovery tools described in README.md, rather than the JSON Import button."},
-      {"title":"Protect your records","text":"Use the same browser and app address. Clearing browser/site data can remove the active database. Do not clear storage to fix a saving error before exporting a backup. IndexedDB avoids the smaller localStorage limit, but still needs available browser/device space. Wait for Save to finish before closing the page."}
-    ]},
-    {"id":"settings","title":"Appearance, privacy and accounts","intro":"Open Settings & Security to adjust appearance, accessibility and privacy. Account features require the running local server and a signed-in account.","blocks":[
-      {"title":"Make the app comfortable","bullets":["Use the header Dark / Light button, or choose a theme in Settings. Use device setting follows the device theme.","Choose Standard, Large or Extra large text, and enable High contrast if helpful.","Dictate appears beside note fields when the browser supports speech recognition. Allow microphone access only when you choose to dictate; browser support varies."]},
-      {"title":"Privacy when stepping away","text":"Hide records now opens a privacy screen. You can also set inactivity to 1, 5 or 15 minutes. Resume care shows the interface again. This is not a password lock or encryption: use your device's screen lock to prevent unauthorized access."},
-      {"title":"Caregiver accounts and permissions","text":"Family & Accounts offers account creation, sign-in and owner invitations through the local server. Owners manage access; caregivers can edit care records; viewers have read-only access. An invitation alone does not make the computer's localhost address accessible from another device."},
-      {"title":"Account security and offline use","text":"Signed-in users can configure an authenticator, download one-use recovery codes and change their password. Keep recovery codes privately outside this browser. Offline care uses cached records and waits for reconnection to sync. If a conflict appears, review the offered versions before resolving it. Keep the server running for server features."}
-    ]},
-    {"id":"help","title":"Installation and troubleshooting","intro":"The layout adapts to phones and tablets, but the current local setup does not provide an HTTPS address accessible from those devices.","blocks":[
-      {"title":"Install on this computer","steps":["Run Start Kindred.cmd and open http://localhost:8877 in Chrome or Edge.","Select Install app. If the browser does not show a prompt, use its installation menu when available.","Opening index.html directly does not provide PWA installation. Continue using the same browser/address to access the same records."]},
-      {"title":"Phone and tablet","text":"The compact Go to dropdown provides navigation on a phone. Actual installation on a phone/tablet requires an accessible HTTPS address, which is not configured in this local copy. localhost on a phone refers to that phone, not your computer. The app's Install app help describes platform steps for when an accessible address is available."},
-      {"title":"Common problems","bullets":["Page does not open: start the launcher, keep its window running and check http://localhost:8877.","A new feature is missing: copy unsaved form text, then press Ctrl + Shift + R in the same browser page.","Records seem missing: check the selected parent, Demo mode, browser and address before adding or importing data.","Save fails: keep the form/tab open, read the displayed reason and do not clear browser data. Copy unsaved text and download a backup when possible.","Photo does not load: use JPEG/PNG up to 5 MB and wait for the preview. A selected file must be saved with the form.","Controls are disabled: check whether you are in the read-only demo or signed in as a viewer.","No reminder appears: review permissions, scheduled time, browser support and whether the required server/app is running."]},
-      {"title":"Open this guide again","text":"Choose User Guide in the app navigation, or use Download PDF there. The manual file is output/pdf/Kindred-User-Guide.pdf inside the application folder. This guide contains no personal care data."}
-    ]}
+    {
+      "id": "start",
+      "title": "Open Kindred and get started",
+      "intro": "Kindred keeps care records for one or more parents. Open the app link in your Etsy access PDF, or use the local launcher below. Online static hosting supports browser records; Python server accounts require the local server.",
+      "blocks": [
+        {
+          "title": "Recommended: open through the local launcher",
+          "steps": [
+            "Open the Elderly Parent Care Tracker folder on your computer.",
+            "Double-click Start Kindred.cmd and leave its window running.",
+            "Open Chrome or Edge and enter http://localhost:8877 in the address bar.",
+            "Enter the code from your Etsy access PDF and select Activate app. Keep the PDF for another device or after clearing browser data.",
+            "Choose a parent under Care profile. Use Overview for a summary or Today for the day's activities."
+          ]
+        },
+        {
+          "title": "First-time setup",
+          "steps": [
+            "On Overview, select Set up care profile.",
+            "Enter the parent's name and your caregiver name. Continue to emergency information.",
+            "Add known allergies and emergency contacts. Leave unknown information empty.",
+            "Add preferences, routine, communication needs and goals agreed with the family or clinician. Select Finish setup."
+          ]
+        },
+        {
+          "title": "Keep using the same browser and address",
+          "text": "Opening index.html directly supports local records, but installation and server account features require the launcher. The file address and localhost have separate browser storage. Switching browsers or addresses does not automatically transfer your records. Export a backup first if you plan to move."
+        },
+        {
+          "title": "Try the examples",
+          "text": "Choose Demo - Eleanor Brooks in Care profile. It has exactly 20 fictional records in total: one journal entry in each of 13 categories, plus seven medication, task, shift, question and handoff records. The demo is read-only and separate from saved family data. Use Back to my care to return."
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "title": "Parents, photos and preferences",
+      "intro": "Each parent has a separate journal, medication schedule, care tasks and handoff history. Always check the selected Care profile before recording care.",
+      "blocks": [
+        {
+          "title": "Add a parent and a photo",
+          "steps": [
+            "Open Family & Accounts and select Add parent.",
+            "Enter the name. For a photo, choose a JPEG or PNG file up to 5 MB.",
+            "Check the photo preview, then add known allergies and emergency information.",
+            "Select Save and wait for the form to close. The new profile becomes selected."
+          ]
+        },
+        {
+          "title": "Edit or remove a photo",
+          "steps": [
+            "Select the parent, then open Family & Accounts > Edit preferences & photo.",
+            "Choose a replacement photo, or select Remove current photo to remove it. To remove only, leave the file picker empty.",
+            "Update preferences, daily routine, care goals or communication needs, then Save."
+          ]
+        },
+        {
+          "title": "Edit the basic profile",
+          "text": "Use the Parent profile / Edit button in the sidebar on a computer. You can also review basic details through Set up care profile in Overview or Settings & Security. Photos are cropped to a square and stored with the profile, including in family backups."
+        },
+        {
+          "title": "Delete a profile carefully",
+          "steps": [
+            "In Family & Accounts, select Delete profile next to the correct parent.",
+            "Review the name and record count. Use Download backup first if you want a copy.",
+            "Type the parent's exact name, then select Delete profile."
+          ]
+        },
+        {
+          "title": "What deletion means",
+          "text": "Deletion removes the active profile, its photo and associated care records. Existing backups and server audit history remain; attached server files are not erased by this action. If it was the last profile, Kindred creates a new empty Parent profile. View-only users and the demo cannot delete profiles."
+        }
+      ]
+    },
+    {
+      "id": "today",
+      "title": "Today and quick recording",
+      "intro": "Today combines scheduled medication, care tasks and appointments in chronological order, with the current caregiver shift when one is scheduled.",
+      "blocks": [
+        {
+          "title": "Read the activity status",
+          "bullets": [
+            "Needs a record: the scheduled time has passed without a record. This does not prove that care was missed.",
+            "Upcoming: the activity is scheduled for later.",
+            "Recorded: a dose or task has an administration/completion record.",
+            "Earlier unfinished one-time tasks and appointments carry forward. Recurring tasks are shown for the current day."
+          ]
+        },
+        {
+          "title": "Complete an activity",
+          "steps": [
+            "Open Today and use Show to filter the list.",
+            "Select Record dose for medication or Complete for a care task when available.",
+            "Review the details and enter the caregiver's name if requested. Confirm the record.",
+            "For an appointment, Mark complete changes its completion status. Use Calendar & Reminders to plan new activities."
+          ]
+        },
+        {
+          "title": "Use Quick record",
+          "bullets": [
+            "Water: enter the amount consumed in ml.",
+            "Meal: select how much was eaten and add an observation if needed.",
+            "Mood: select the observed mood and add context.",
+            "Sleep: record the hours slept and any observations.",
+            "Vital signs: opens the structured measurement form.",
+            "Care note: opens a daily care journal entry."
+          ]
+        },
+        {
+          "title": "Before saving",
+          "text": "Review the parent, time and caregiver. Quick records describe care that has already occurred; future times are rejected. Select Include in caregiver handoff when the next caregiver should see the update. Medication administration is recorded against its schedule, not through a generic quick-care note."
+        }
+      ]
+    },
+    {
+      "id": "medication",
+      "title": "Medication schedules and stock",
+      "intro": "Enter the actual prescription and instructions supplied by the clinician. Kindred organizes records; it does not choose medication, doses or treatment.",
+      "blocks": [
+        {
+          "title": "Create a medication plan",
+          "steps": [
+            "Choose Medication Log from Care Journal.",
+            "Select Add prescribed medication and enter the medication name and prescribed dose.",
+            "Enter daily times using 24-hour format, separated by commas, such as 08:00, 20:00.",
+            "Set the start date, optional end date, prescription instructions and optional renewal date, then Save.",
+            "Use Days & stock to select prescribed weekdays and configure stock tracking."
+          ]
+        },
+        {
+          "title": "Record an administration",
+          "steps": [
+            "Open Today or Medication Log and locate the scheduled dose.",
+            "Select Record dose, choose Taken or Skipped and confirm the caregiver.",
+            "For a skipped dose, provide a reason. Future and duplicate administrations are not allowed."
+          ]
+        },
+        {
+          "title": "Correct a record",
+          "text": "In Medication Log, find Correct an administration and select Correct beside the record. Enter the corrected status and note, with a reason for the correction. The original administration details remain in the history."
+        },
+        {
+          "title": "Track stock and stop a plan",
+          "text": "Days & stock sets the starting amount, units per administration and low-stock threshold. Add stock records a restock. These counts depend on accurate entries and corrections. Stopping a medication plan stops future scheduling while keeping its recorded history. Confirm medication changes with the clinician outside the app."
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "title": "The care journal and search",
+      "intro": "Choose a category from Care Journal, then Add journal entry. Enter a title, date and time, caregiver and details. Category-specific fields appear when relevant.",
+      "blocks": [
+        {
+          "title": "What goes in each category",
+          "bullets": [
+            "Medication Log: medication notes; scheduled administrations are recorded separately.",
+            "Appointments: visits and appointment notes.",
+            "Vital Signs: blood pressure, pulse, temperature, oxygen saturation and weight.",
+            "Symptoms: observations and their context.",
+            "Meals & Hydration: food and fluid intake.",
+            "Daily Care: everyday assistance and care updates.",
+            "Mood & Behavior: observed changes and context.",
+            "Sleep: sleep duration and observations.",
+            "Falls & Incidents: what happened and relevant details.",
+            "Doctor Notes: clinician notes and instructions you record.",
+            "Expenses: care-related amounts and currency/unit.",
+            "Care Team: caregiver and professional contact notes.",
+            "Documents Log: descriptions and storage locations for paperwork."
+          ]
+        },
+        {
+          "title": "Find an earlier entry",
+          "steps": [
+            "Use the category's search box for a quick search within that category.",
+            "For a wider search, open Search records.",
+            "Combine text, category, caregiver, From / To dates and Handoff entries only.",
+            "Use Clear filters to start again. If more than 200 records match, narrow the filters."
+          ]
+        },
+        {
+          "title": "Edit and history",
+          "text": "Use the Edit control on an entry to correct it. Deleting a journal entry asks for a reason. History & Recovery shows recorded changes and offers a text filter for caregiver, action, reason or detail. Local history belongs to this browser; server audit is maintained by the family server."
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "title": "Calendar, tasks and caregiver shifts",
+      "intro": "Use scheduled tasks to make responsibilities visible. A caregiver name in a task is a label; it does not itself send an invitation or create an account.",
+      "blocks": [
+        {
+          "title": "Add a task or reminder",
+          "steps": [
+            "Open Calendar & Reminders and choose Add task or reminder.",
+            "Enter the title, type, date/time and assigned caregiver.",
+            "Choose no repeat, daily or weekly. Add useful instructions and Save.",
+            "Select a calendar date to review tasks, appointments and medication for that day."
+          ]
+        },
+        {
+          "title": "Schedule a caregiver shift",
+          "steps": [
+            "Open Caregiver Shifts and add a shift.",
+            "Enter the responsible caregiver, optional backup caregiver, start and end times.",
+            "Add handoff responsibilities and Save. The end must be after the start.",
+            "Review or edit upcoming shifts. Overlapping shifts for the same caregiver are rejected."
+          ]
+        },
+        {
+          "title": "Reminders and calendar export",
+          "text": "Browser reminders require permission and work while Kindred is open. Export next 30 days downloads a calendar file for your calendar app; exported events include reminders. Updating Kindred does not update an already imported calendar file. Background reminders require a server account, browser support and the local server/computer to remain running and connected."
+        },
+        {
+          "title": "Time zones",
+          "text": "Settings & Security shows the care time zone used for server reminders. Journal forms and calendars use the device's local time. Keep these aligned and review the displayed date/time before saving."
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "title": "Hand over care with confidence",
+      "intro": "Caregiver Handoff collects the important details for the next person. The family should agree how and when to review it; the app is not an emergency alert service.",
+      "blocks": [
+        {
+          "title": "Prepare useful notes",
+          "steps": [
+            "Select Include in caregiver handoff on journal entries that matter to the next caregiver.",
+            "Review medication administrations, remaining tasks and earlier unfinished activities.",
+            "Keep preferences, routine, communication needs and goals current in the personal care guide.",
+            "Edit an entry and clear its handoff checkbox when it no longer needs to appear in new summaries."
+          ]
+        },
+        {
+          "title": "Create a handoff",
+          "steps": [
+            "Open Caregiver Handoff and choose Prepare handoff.",
+            "Select or enter the next caregiver and add what needs special attention.",
+            "Save the handoff. Kindred keeps a dated snapshot of the summary at that time.",
+            "The receiving caregiver uses I have taken over care to confirm the takeover."
+          ]
+        },
+        {
+          "title": "Snapshot versus current summary",
+          "text": "A saved handoff snapshot stays as it was when prepared. Later journal edits change the current summary, not the old snapshot. With accounts, acceptance is restricted to the assigned recipient when one was specified."
+        },
+        {
+          "title": "Share a copy",
+          "text": "Copy summary copies the current summary to the clipboard when available. Download saves a text copy. Review it before sending it through your own chosen communication method. Kindred does not automatically message the family when you use these buttons."
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "title": "Prepare a visit and create a PDF report",
+      "intro": "Prepare a Visit organizes consultation questions and shows measurement trends. Reports turns the selected records into a printable document.",
+      "blocks": [
+        {
+          "title": "Before the appointment",
+          "steps": [
+            "Open Prepare a Visit and add questions for the doctor.",
+            "Add the clinician and visit date if useful. After the visit, record answers and mark questions Answered.",
+            "Review the available measurement charts and their recorded values. Missing measurements are not inferred."
+          ]
+        },
+        {
+          "title": "Create the report",
+          "steps": [
+            "Open Reports and select the correct parent.",
+            "Choose From and To dates, or use Last 7 days, Last 30 days or All dates.",
+            "Choose Full care report or Consultation brief.",
+            "Review the report, then select Print / Save PDF.",
+            "In the browser print window, select Save as PDF and choose a folder on your computer."
+          ]
+        },
+        {
+          "title": "Choose the format",
+          "bullets": [
+            "Full care report: care preferences, administration records, measurement trends and journal content for the chosen period.",
+            "Consultation brief: emergency information, current active medication plans, administration totals in the chosen period, open questions, goals, symptoms, incidents and measurements."
+          ]
+        },
+        {
+          "title": "Read the scope correctly",
+          "text": "Current medication plans and open questions reflect the profile now, not a historical prescription list. Reports summarize entered records and do not interpret measurements or recommend treatment. Dark Mode does not make the printed report's background dark."
+        }
+      ]
+    },
+    {
+      "id": "documents",
+      "title": "Documents and emergency information",
+      "intro": "A document register entry and an attached file are different things. A register describes paperwork; an attachment stores a supported file on the family server.",
+      "blocks": [
+        {
+          "title": "Record a document location",
+          "steps": [
+            "Open Documents Log and add a journal entry.",
+            "Describe the document and where to find it, such as a physical folder or a location you maintain.",
+            "Add relevant dates and the caregiver who recorded the information."
+          ]
+        },
+        {
+          "title": "Attach a document through the server",
+          "steps": [
+            "Open Kindred through the launcher and sign in to a family account.",
+            "Select the parent and ensure changes have synced.",
+            "In Documents Log, choose Attach a care document.",
+            "Select a PDF, PNG or JPEG up to 5 MB, add the clinic/date and upload.",
+            "Use the document controls to open/download or archive an attachment when available."
+          ]
+        },
+        {
+          "title": "Emergency information",
+          "text": "Open Emergency Information to view known allergies and contacts for the selected parent. Update these through the profile editor or guided setup. Keep a separate accessible emergency contact copy for times when the device or app is unavailable."
+        },
+        {
+          "title": "Backup coverage",
+          "text": "JSON family backups contain profile records and document register entries, but not uploaded server document files. Those files are included in the encrypted full server backup. Demo document examples are descriptions only, with no files attached."
+        }
+      ]
+    },
+    {
+      "id": "backup",
+      "title": "Backups, storage and recovery",
+      "intro": "Records are stored locally in this browser using IndexedDB. On the first updated launch, existing Kindred localStorage records are copied into the database before the app starts. The original migration copy is retained.",
+      "blocks": [
+        {
+          "title": "Download and check a backup",
+          "steps": [
+            "Select Backup in the header, or Download family backup in Settings & Security.",
+            "Choose a location outside the browser and verify that the JSON file was downloaded.",
+            "Use Check a backup file in Settings to validate its structure without importing it.",
+            "Keep dated copies. The displayed download-request date does not prove that a file was saved."
+          ]
+        },
+        {
+          "title": "Import a JSON backup",
+          "steps": [
+            "Export the current records first if you want to keep them.",
+            "Select Import and choose a Kindred JSON backup.",
+            "Review the replacement confirmation carefully: import replaces current family profiles; it does not merge them.",
+            "If signed in, this change also updates the shared family after synchronization."
+          ]
+        },
+        {
+          "title": "History and server restore points",
+          "text": "History & Recovery shows recent changes and can restore supported deleted records. Server accounts also have automatic restore points; restoring a family snapshot is an owner action and creates another revision. Encrypted full server backups need the server recovery tools described in README.md, rather than the JSON Import button."
+        },
+        {
+          "title": "Protect your records",
+          "text": "Use the same browser and app address. Clearing browser/site data can remove the active database. Do not clear storage to fix a saving error before exporting a backup. IndexedDB avoids the smaller localStorage limit, but still needs available browser/device space. Wait for Save to finish before closing the page."
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "title": "Appearance, privacy and accounts",
+      "intro": "Open Settings & Security to adjust appearance, accessibility and privacy. Account features require the running local server and a signed-in account.",
+      "blocks": [
+        {
+          "title": "Make the app comfortable",
+          "bullets": [
+            "Use the header Dark / Light button, or choose a theme in Settings. Use device setting follows the device theme.",
+            "Choose Standard, Large or Extra large text, and enable High contrast if helpful.",
+            "Dictate appears beside note fields when the browser supports speech recognition. Allow microphone access only when you choose to dictate; browser support varies."
+          ]
+        },
+        {
+          "title": "Privacy when stepping away",
+          "text": "Hide records now opens a privacy screen. You can also set inactivity to 1, 5 or 15 minutes. Resume care shows the interface again. This is not a password lock or encryption: use your device's screen lock to prevent unauthorized access."
+        },
+        {
+          "title": "Caregiver accounts and permissions",
+          "text": "Family & Accounts offers account creation, sign-in and owner invitations through the local server. Owners manage access; caregivers can edit care records; viewers have read-only access. An invitation alone does not make the computer's localhost address accessible from another device."
+        },
+        {
+          "title": "Account security and offline use",
+          "text": "Signed-in users can configure an authenticator, download one-use recovery codes and change their password. Keep recovery codes privately outside this browser. Offline care uses cached records and waits for reconnection to sync. If a conflict appears, review the offered versions before resolving it. Keep the server running for server features."
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "title": "Installation and troubleshooting",
+      "intro": "The layout adapts to phones and tablets, but the current local setup does not provide an HTTPS address accessible from those devices.",
+      "blocks": [
+        {
+          "title": "Install on this computer",
+          "steps": [
+            "Run Start Kindred.cmd and open http://localhost:8877 in Chrome or Edge.",
+            "Select Install app. If the browser does not show a prompt, use its installation menu when available.",
+            "Opening index.html directly does not provide PWA installation. Continue using the same browser/address to access the same records."
+          ]
+        },
+        {
+          "title": "Phone and tablet",
+          "text": "The compact Go to dropdown provides navigation on a phone. Actual installation on a phone/tablet requires an accessible HTTPS address, which is not configured in this local copy. localhost on a phone refers to that phone, not your computer. The app's Install app help describes platform steps for when an accessible address is available."
+        },
+        {
+          "title": "Common problems",
+          "bullets": [
+            "Page does not open: start the launcher, keep its window running and check http://localhost:8877.",
+            "A new feature is missing: copy unsaved form text, then press Ctrl + Shift + R in the same browser page.",
+            "Records seem missing: check the selected parent, Demo mode, browser and address before adding or importing data.",
+            "Save fails: keep the form/tab open, read the displayed reason and do not clear browser data. Copy unsaved text and download a backup when possible.",
+            "Photo does not load: use JPEG/PNG up to 5 MB and wait for the preview. A selected file must be saved with the form.",
+            "Controls are disabled: check whether you are in the read-only demo or signed in as a viewer.",
+            "No reminder appears: review permissions, scheduled time, browser support and whether the required server/app is running."
+          ]
+        },
+        {
+          "title": "Open this guide again",
+          "text": "Choose User Guide in the app navigation, or use Download PDF there. The manual file is output/pdf/Kindred-User-Guide.pdf inside the application folder. This guide contains no personal care data."
+        }
+      ]
+    }
   ]
 }

@@ -13,3 +13,4 @@ release/
 *.sqlite3
 *.db
 *.key
+output/pdf/Etsy-Access.pdf
