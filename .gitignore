@@ -1,0 +1,15 @@
+data/
+__pycache__/
+*.pyc
+tests/artifacts/
+vendor/
+.runtime/
+tmp/
+release/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.key

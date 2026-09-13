@@ -1,0 +1,38 @@
+.mobile-navigation{display:none}
+#installAppButton{white-space:nowrap;min-height:44px}
+input,select,textarea{max-width:100%;min-width:0}
+dialog{max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
+.entry-body,main,.card,.toolbar label{min-width:0}
+.card-head h2,.demo-banner p{overflow-wrap:anywhere}
+@media(pointer:coarse){button,.icon-button,.text-button,nav button{min-height:44px}input,select{min-height:44px}.entry-actions{gap:8px}input[type=checkbox]{min-height:24px;min-width:24px}}
+@media(min-width:701px) and (max-width:1100px){
+  .brand{font-size:25px;white-space:nowrap}.brand-icon{width:30px;height:30px;font-size:26px}
+  .sidebar{width:220px;padding:24px 14px}main{margin-left:220px}
+  header{height:auto;min-height:76px;flex-wrap:wrap;gap:8px;padding:12px 20px}
+  .header-actions{gap:6px;flex-wrap:wrap}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trend-grid{grid-template-columns:1fr}.toolbar{flex-wrap:wrap}.toolbar label{flex:1 1 180px}
+  .page-heading{align-items:flex-start;flex-wrap:wrap}.card-head{flex-wrap:wrap}
+  .card .entry{flex-wrap:wrap}.demo-banner{flex-wrap:wrap}
+}
+@media(max-width:700px){
+  body{font-size:15px}.sidebar{padding:16px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left))}
+  nav{display:block;margin-top:12px;overflow:visible}nav>:not(.mobile-navigation){display:none!important}
+  nav .mobile-navigation{display:block;margin:0;font-size:12px;letter-spacing:normal;color:var(--muted)}
+  .mobile-navigation select{margin-top:6px;width:100%;min-height:46px}
+  .profile-picker{font-size:12px}.profile-picker select{min-height:46px}
+  input,select,textarea{font-size:16px!important}
+  button,.icon-button,.text-button{min-height:44px}.primary,.secondary{white-space:normal}
+  header{padding:8px 16px;gap:2px}.breadcrumb{width:100%;padding-top:4px}
+  .header-actions{width:100%;justify-content:space-between;gap:2px;flex-wrap:wrap}
+  .header-actions .icon-button{font-size:12px;padding:8px 5px}
+  .page{padding:22px 16px max(24px,env(safe-area-inset-bottom))}
+  h1{font-size:25px}.page-heading .primary{width:100%}
+  .card{padding:16px}.card-head{align-items:flex-start;flex-wrap:wrap}
+  .toolbar{flex-wrap:wrap}.toolbar label{flex:1 1 100%}.toolbar input,.toolbar select{width:100%}
+  .entry{flex-wrap:wrap}.entry-actions{max-width:none!important;flex-wrap:wrap}
+  .dialog-actions{flex-wrap:wrap}dialog{padding:20px;max-width:calc(100% - 20px)}
+  #toast{max-width:calc(100% - 24px);width:max-content;bottom:max(18px,env(safe-area-inset-bottom))}
+  .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:360px){.stats{grid-template-columns:1fr}.header-actions{justify-content:flex-start;gap:5px}}
+@media print{#installAppButton,.mobile-navigation{display:none!important}}

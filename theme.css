@@ -1,0 +1,25 @@
+html[data-theme=dark]{--bg:#101915;--ink:#e4eee7;--muted:#a8b9ad;--green:#93d6b2;--line:#35473c;--soft:#23382c}
+html[data-theme=dark] :is(.sidebar,.card,.stat,dialog,.care-strip){background:#19261f;border-color:var(--line)}
+html[data-theme=dark] header{background:#14211c}
+html[data-theme=dark] :is(input,select,textarea,.secondary,.quick){background:#14211c;color:var(--ink);border-color:#506457}
+html[data-theme=dark] :is(.family,.welcome,.handoff,.report-summary,.handoff-record pre,.recovery-codes,th){background:#23342a;border-color:var(--line);color:var(--ink)}
+html[data-theme=dark] :is(.avatar,.stat-icon,.entry-icon,.badge,nav button.active){background:#2b4434;color:#bee5cc}
+html[data-theme=dark] :is(p,small,label,.note,.muted,.entry p,.entry small,.stat small,.stat-top,nav button,.breadcrumb,.breadcrumb span:last-child,.handoff-list,.handoff-record details,.trend-figure details,.trend-figure small,footer,.sidebar-bottom,.nav-divider,.empty,.icon-button){color:var(--muted)}
+html[data-theme=dark] :is(.welcome h2,.care-strip strong,.text-button,.quick span,a){color:var(--green)}
+html[data-theme=dark] .primary{background:#93d6b2;color:#10271b}
+html[data-theme=dark] :is(.entry,.handoff-record,.history-record,td,th,fieldset,.trend-figure){border-color:var(--line)}
+html[data-theme=dark] .emergency-box{background:#352a24;border-color:#685245;color:#f2dccb}
+html[data-theme=dark] :is(.warning,.conflict-banner){background:#3b301c!important;color:#f0d394!important;border-color:#73603a}
+html[data-theme=dark] .form-error{color:#ffb5a5}
+html[data-theme=dark] .trend-figure svg text{fill:#c2d1c6}
+html[data-theme=dark] .trend-figure svg polyline{stroke:#a3ddbc}
+html[data-theme=dark] dialog::backdrop{background:#0009}
+html[data-theme=dark].high-contrast{--ink:#fff;--muted:#effaf2;--line:#9ab6a4;--green:#b7f8d0}
+html[data-theme=dark].high-contrast :is(p,small,label,.note,.muted,.entry small,.entry p,.stat small,nav button,.stat-top){color:#effaf2!important}
+html[data-theme=dark].high-contrast button.primary{color:#10271b!important}
+html[data-theme=dark].high-contrast a{color:#b7f8d0}
+.demo-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--soft);border:1px solid var(--line);padding:18px 22px;border-radius:10px;margin-bottom:22px;color:var(--ink)}
+.demo-banner p{font-size:12px;margin:5px 0 0;max-width:780px}.demo-banner strong{font-size:13px}
+#themeToggle{white-space:nowrap;min-width:65px}
+@media(max-width:700px){header{height:auto;min-height:58px;gap:8px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.breadcrumb span{margin-left:7px}.header-actions .avatar{display:none}.demo-banner{align-items:flex-start;flex-direction:column}}
+@media print{html[data-theme=dark]{--bg:white;--ink:#17251d;--muted:#394b40;--green:#24543a;--line:#bbb;--soft:white}html[data-theme=dark] :is(body,.card,.stat,.welcome,.handoff,.report-summary,.handoff-record pre,.recovery-codes,th,.emergency-box,.demo-banner){background:white!important;color:#17251d!important}html[data-theme=dark] :is(p,small,label,.note,.muted,.entry p,.entry small,.handoff-list,.trend-figure details,.trend-figure small){color:#394b40!important}.demo-banner button,.demo-launch{display:none!important}.demo-banner{break-inside:avoid}html[data-theme=dark] .trend-figure svg text{fill:#17251d}}
