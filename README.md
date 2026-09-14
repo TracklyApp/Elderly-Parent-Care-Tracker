@@ -37,10 +37,13 @@ itself make the Python server run online or install the application on a phone.
 
 ## Activation and the Etsy PDF
 
-The public link opens a read-only demo with exactly 20 fictional records in
-total. No code is required to explore it. Activate full app opens code entry;
-successful activation enables personal care records and is remembered in the
-current browser. Existing personal data stays separate from the demo. The public source includes a SHA-256 digest only, never
+The public link opens an interactive demo with 20 fictional starter records.
+Visitors can save 20 additional trial records across the journal and care tools.
+Trial records persist in a separate browser store; they do not enter personal
+profiles or family sync. Editing uses no new slot; deleting an added record frees
+one. Attempting a 21st trial record opens activation without saving that record.
+Activate full app opens code entry to start personal care profiles. Activation
+is remembered in this browser. Starter records cannot be deleted. The public source includes a SHA-256 digest only, never
 the plain-text purchase code. Keep the Etsy access PDF separate from GitHub.
 
 This is a browser-side access screen, not server license verification. Someone
@@ -54,7 +57,7 @@ version. GitHub Pages supports the static app, not the Python account server.
 
 Use User Guide in the application or Open User Manual.cmd. The same guide is
 available at output/pdf/Kindred-User-Guide.pdf. This guide contains no real
-personal records. The fictional demo has 20 records in total.
+personal records. The demo has 20 starter examples and space for 20 additional trial records.
 
 Optional manual build dependencies: reportlab, pypdf and pymupdf. build_manual.py
 uses Windows Segoe UI fonts and looks for these dependencies in data/pdf-tools/.

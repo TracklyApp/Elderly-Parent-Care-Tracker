@@ -1,4 +1,4 @@
-/* Fictional, read-only examples. No real people, prescriptions or appointments. */
+/* Fictional starter examples. No real people, prescriptions or appointments. */
 (function(root){
   const people=['Alex Brooks','Jamie Brooks','Morgan Reed','Casey Lee','Taylor Green','Jordan Ellis','Robin Lane','Sam Parker','Drew Miller','Avery Quinn'];
   const samples={

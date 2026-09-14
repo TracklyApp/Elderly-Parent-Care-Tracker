@@ -6,7 +6,7 @@
     {
       "id": "start",
       "title": "Open Kindred and get started",
-      "intro": "Open the app link in your Etsy PDF to explore 20 fictional demo records without a code. Select Activate full app and enter your purchase code to create and save personal care records.",
+      "intro": "The app opens with 20 fictional starter records. Add up to 20 trial records without a code. Select Activate full app and enter your purchase code to start your own care profile.",
       "blocks": [
         {
           "title": "Recommended: open through the local launcher",
@@ -33,7 +33,7 @@
         },
         {
           "title": "Try the examples",
-          "text": "The public demo has exactly 20 fictional records in total: 13 journal entries plus seven medication, task, shift, question and handoff records. It is read-only and separate from saved family data. Activate full app opens code entry; Continue exploring demo returns without activating. After activation, Back to my care returns from the demo to your profiles."
+          "text": "The demo starts with 20 examples: 13 journal entries and seven care workflow records. You can add 20 more across journal entries, medications, doses, tasks, shifts, questions and handoffs. Edits use no new slots; deleting a record you added frees a slot. The 20 starter records cannot be deleted. Trial changes stay in a separate browser store and do not transfer to personal profiles on activation."
         }
       ]
     },
@@ -73,7 +73,7 @@
         },
         {
           "title": "What deletion means",
-          "text": "Deletion removes the active profile, its photo and associated care records. Existing backups and server audit history remain; attached server files are not erased by this action. If it was the last profile, Kindred creates a new empty Parent profile. View-only users and the demo cannot delete profiles."
+          "text": "Deletion removes the active profile, its photo and associated care records. Existing backups and server audit history remain; attached server files are not erased by this action. If it was the last profile, Kindred creates a new empty Parent profile. View-only users and the demo cannot delete parent profiles."
         }
       ]
     },
@@ -408,7 +408,7 @@
             "Records seem missing: check the selected parent, Demo mode, browser and address before adding or importing data.",
             "Save fails: keep the form/tab open, read the displayed reason and do not clear browser data. Copy unsaved text and download a backup when possible.",
             "Photo does not load: use JPEG/PNG up to 5 MB and wait for the preview. A selected file must be saved with the form.",
-            "Controls are disabled: check whether you are in the read-only demo or signed in as a viewer.",
+            "Trial limit reached: the demo allows 20 additional records. Activate for your own care profile, or delete a trial record to free a slot. Profile creation, imports and server features require activation.",
             "No reminder appears: review permissions, scheduled time, browser support and whether the required server/app is running."
           ]
         },
