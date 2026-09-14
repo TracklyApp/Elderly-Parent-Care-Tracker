@@ -1,5 +1,5 @@
 const BASE=new URL('./',self.location).pathname;
-const CACHE='kindred-shell-'+BASE+'-v17';
+const CACHE='kindred-shell-'+BASE+'-v18';
 const SHELL=['/','/index.html','/activation.js','/activation.css','/storage.js','/database.js','/bootstrap.js','/guide.js','/guide-data.js','/guide.css','/output/pdf/Kindred-User-Guide.pdf','/style.css','/mobile.css','/design.css','/design.js','/premium.js','/premium-core.js','/premium.css','/mobile.js','/theme.css','/theme.js','/examples-data.js','/examples.js','/app.js','/care-core.js','/enhancements-core.js','/family.js','/enhancements.js','/manifest.webmanifest','/icon.svg','/icon-192.png','/icon-512.png'].map(path=>BASE+path.slice(1));
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('kindred-shell-'+BASE+'-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});

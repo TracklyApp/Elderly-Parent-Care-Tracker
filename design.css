@@ -1,6 +1,6 @@
 :root{--bg:#f3f5f2;--ink:#243c33;--muted:#62796c;--line:#dee7df;--green:#28674f;--soft:#eaf1e9}
 body{font-family:'DM Sans','Segoe UI',sans-serif}
-.sidebar{background:#fafcf9;padding-top:28px}.brand{white-space:nowrap;font-size:28px}.brand-icon{box-shadow:0 5px 16px #27614d20}
+.sidebar{background:#fafcf9;padding-top:28px}.brand{white-space:nowrap;font-size:28px}.brand-icon{box-shadow:0 5px 16px #27614d20;vertical-align:middle;line-height:1;letter-spacing:0}.brand-icon svg{display:block;width:70%;height:70%}
 .workspace-label{font-size:9px;letter-spacing:2px}.family{background:var(--soft);border-radius:14px;padding:16px 12px}.avatar{background:#d8e8d5;color:#345c47}
 nav button{min-height:42px;border-radius:10px;margin:4px 0;transition:background .15s,color .15s}nav button.active{background:#e0ecdf;color:#245d45;box-shadow:inset 3px 0 #448565}
 nav button:hover{background:var(--soft)}.journal-picker select{border-radius:10px}.sidebar-bottom{border-top:1px solid var(--line);margin-top:auto;padding-top:17px}
