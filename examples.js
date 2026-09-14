@@ -3,7 +3,8 @@
   const demo=KindredExamples.create(), realProfile=profile, priorNav=nav, priorRender=render,
     priorEditing=editingAllowed, priorSettings=settingsScreen;
   profile=function(){return activeProfileId===demo.id?demo:realProfile();};
-  editingAllowed=function(){return !profile().isDemo&&priorEditing();};
+  if(!KindredActivation.isActivated()){familyData={version:2,profiles:[demo]};activeProfileId=demo.id;}
+  editingAllowed=function(){return KindredActivation.isActivated()&&!profile().isDemo&&priorEditing();};
   nav=function(){priorNav();const picker=$('#profilePicker');picker.insertAdjacentHTML('beforeend',`<option value="${demo.id}">Demo · Eleanor Brooks (20 records total)</option>`);picker.value=profile().id;};
   settingsScreen=function(){return card('Appearance',`<label>Color theme<select id="themePreference"><option value="system">Use device setting</option><option value="light">Light</option><option value="dark">Dark</option></select></label><p class="note">Your preference is remembered on this browser.</p>`)+priorSettings();};
   render=function(){
@@ -11,7 +12,7 @@
     $('#exportButton').disabled=isDemo;$('#profileButton').disabled=isDemo;
     $('#demoBanner')?.remove();
     if(isDemo){
-      $('#content').insertAdjacentHTML('beforebegin','<section id="demoBanner" class="demo-banner"><div><strong>Demo · Fictional, read-only examples</strong><p>20 fictional records total: 13 journal entries and 7 medication, task, shift, question and handoff records. Documents are register examples; no files are attached.</p></div><button class="secondary" data-leave-demo>Back to my care</button></section>');
+      $('#content').insertAdjacentHTML('beforebegin',`<section id="demoBanner" class="demo-banner"><div><strong>Demo · 20 fictional records total</strong><p>20 fictional records total: 13 journal entries and 7 medication, task, shift, question and handoff records. Explore freely. Activate to save your own care records.</p></div><button class="primary" data-leave-demo>${KindredActivation.isActivated()?'Back to my care':'Activate full app'}</button></section>`);
       // Allow browsing, searching and printable reports, but no account or care actions.
       document.querySelectorAll('#content button, #addButton, #profileButton, #importButton, #exportButton').forEach(b=>{
         const allowed=b.hasAttribute('data-view')||b.hasAttribute('data-close')||b.hasAttribute('data-leave-demo')||b.hasAttribute('data-print')||b.hasAttribute('data-copy')||b.hasAttribute('data-download');

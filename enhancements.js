@@ -3,7 +3,7 @@ Care.upgrade(familyData);
 let syncBase=structuredClone(familyData),mergeReview=null,pendingReason='Care record updated',installPrompt=null;
 let historyRows=[],backupRows=[],documentRows=[],securityInfo=null,systemInfo=null;
 const originalEnhancedRender=render,originalEnhancedNav=nav,originalCache=saveCache,originalPersist=persist,originalAccount=attachAccount;
-function editingAllowed(){return currentUser?.role!=='viewer';}
+function editingAllowed(){return KindredActivation.isActivated()&&currentUser?.role!=='viewer';}
 function reasonForChange(reason){pendingReason=reason;}
 saveCache=function(){const ok=originalCache();if(currentUser){try{const saved=JSON.parse(localStorage.getItem(cacheKey()));saved.base=syncBase;localStorage.setItem(cacheKey(),JSON.stringify(saved));localStorage.setItem('kindred-last-account',JSON.stringify({id:currentUser.id,name:currentUser.name,email:currentUser.email,role:currentUser.role}));}catch{}}return ok;};
 attachAccount=async function(user){if(currentUser?.id!==user.id){historyRows=[];backupRows=[];documentRows=[];securityInfo=null;systemInfo=null;}const pendingCache=JSON.parse(localStorage.getItem('kindred-account-'+user.id)||'null');await originalAccount(user);Care.upgrade(familyData);syncBase=pendingCache?.pending&&pendingCache.base?pendingCache.base:structuredClone(familyData);if(!syncConflict)$('#syncConflict')?.remove();saveCache();};
@@ -115,7 +115,7 @@ window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();ins
 window.addEventListener('online',()=>{if(currentUser)api('me').then(attachAccount).catch(()=>syncStatus('Reconnect to sync your saved changes'));});
 window.addEventListener('offline',()=>syncStatus('Offline · changes stay on this device'));
 if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>toast('Offline installation is unavailable in this browser.'));
-function restoreOfflineSession(){if(currentUser)return;try{const last=JSON.parse(localStorage.getItem('kindred-last-account'));const cache=last&&JSON.parse(localStorage.getItem('kindred-account-'+last.id));if(cache){Care.validate(cache.state);familyData=Care.upgrade(cache.state);currentUser={...last,csrf:''};serverRevision=cache.revision;syncDirty=cache.pending;syncBase=cache.base||structuredClone(familyData);activeProfileId=familyData.profiles[0].id;render();syncStatus('Offline · changes stay on this device');}}catch{}}
+function restoreOfflineSession(){if(!KindredActivation.isActivated()||currentUser)return;try{const last=JSON.parse(localStorage.getItem('kindred-last-account'));const cache=last&&JSON.parse(localStorage.getItem('kindred-account-'+last.id));if(cache){Care.validate(cache.state);familyData=Care.upgrade(cache.state);currentUser={...last,csrf:''};serverRevision=cache.revision;syncDirty=cache.pending;syncBase=cache.base||structuredClone(familyData);activeProfileId=familyData.profiles[0].id;render();syncStatus('Offline · changes stay on this device');}}catch{}}
 if(!navigator.onLine)restoreOfflineSession();
 else if(location.protocol!=='file:')api('health').catch(restoreOfflineSession);
 render();

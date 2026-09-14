@@ -37,8 +37,10 @@ itself make the Python server run online or install the application on a phone.
 
 ## Activation and the Etsy PDF
 
-The app requests the purchase code on first use and remembers activation in
-the current browser. The public source includes a SHA-256 digest only, never
+The public link opens a read-only demo with exactly 20 fictional records in
+total. No code is required to explore it. Activate full app opens code entry;
+successful activation enables personal care records and is remembered in the
+current browser. Existing personal data stays separate from the demo. The public source includes a SHA-256 digest only, never
 the plain-text purchase code. Keep the Etsy access PDF separate from GitHub.
 
 This is a browser-side access screen, not server license verification. Someone

@@ -6,7 +6,7 @@
     {
       "id": "start",
       "title": "Open Kindred and get started",
-      "intro": "Kindred keeps care records for one or more parents. Open the app link in your Etsy access PDF, or use the local launcher below. Online static hosting supports browser records; Python server accounts require the local server.",
+      "intro": "Open the app link in your Etsy PDF to explore 20 fictional demo records without a code. Select Activate full app and enter your purchase code to create and save personal care records.",
       "blocks": [
         {
           "title": "Recommended: open through the local launcher",
@@ -14,7 +14,7 @@
             "Open the Elderly Parent Care Tracker folder on your computer.",
             "Double-click Start Kindred.cmd and leave its window running.",
             "Open Chrome or Edge and enter http://localhost:8877 in the address bar.",
-            "Enter the code from your Etsy access PDF and select Activate app. Keep the PDF for another device or after clearing browser data.",
+            "The demo opens first. Select Activate full app, enter the code from your Etsy PDF and select Activate app. Activation is remembered in this browser.",
             "Choose a parent under Care profile. Use Overview for a summary or Today for the day's activities."
           ]
         },
@@ -33,7 +33,7 @@
         },
         {
           "title": "Try the examples",
-          "text": "Choose Demo - Eleanor Brooks in Care profile. It has exactly 20 fictional records in total: one journal entry in each of 13 categories, plus seven medication, task, shift, question and handoff records. The demo is read-only and separate from saved family data. Use Back to my care to return."
+          "text": "The public demo has exactly 20 fictional records in total: 13 journal entries plus seven medication, task, shift, question and handoff records. It is read-only and separate from saved family data. Activate full app opens code entry; Continue exploring demo returns without activating. After activation, Back to my care returns from the demo to your profiles."
         }
       ]
     },
@@ -386,7 +386,7 @@
     {
       "id": "help",
       "title": "Installation and troubleshooting",
-      "intro": "The layout adapts to phones and tablets, but the current local setup does not provide an HTTPS address accessible from those devices.",
+      "intro": "Use the HTTPS app link from your access PDF on a computer, phone or tablet. The layout adapts to your screen. The optional local launcher runs on your computer only.",
       "blocks": [
         {
           "title": "Install on this computer",
@@ -398,7 +398,7 @@
         },
         {
           "title": "Phone and tablet",
-          "text": "The compact Go to dropdown provides navigation on a phone. Actual installation on a phone/tablet requires an accessible HTTPS address, which is not configured in this local copy. localhost on a phone refers to that phone, not your computer. The app's Install app help describes platform steps for when an accessible address is available."
+          "text": "Open the HTTPS app link on your phone or tablet. Use the Go to dropdown to navigate. Supported browsers offer Install app or Add to Home Screen. Activation and records are separate in each browser; records do not automatically sync between devices. A computer localhost address cannot connect your phone to that computer."
         },
         {
           "title": "Common problems",
