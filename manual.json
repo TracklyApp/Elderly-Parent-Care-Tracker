@@ -398,7 +398,7 @@
         },
         {
           "title": "Phone and tablet",
-          "text": "Open the HTTPS app link on your phone or tablet. Use the Go to dropdown to navigate. Supported browsers offer Install app or Add to Home Screen. Activation and records are separate in each browser; records do not automatically sync between devices. A computer localhost address cannot connect your phone to that computer."
+          "text": "Open the HTTPS app link on your phone or tablet. Tap the three-line menu in the top-right corner to open navigation. Choose a section; the menu closes automatically. Supported browsers offer Install app or Add to Home Screen. Activation and records are separate in each browser; records do not automatically sync between devices. A computer localhost address cannot connect your phone to that computer."
         },
         {
           "title": "Common problems",

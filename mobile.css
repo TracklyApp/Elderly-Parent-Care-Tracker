@@ -1,4 +1,6 @@
 .mobile-navigation{display:none}
+#mobileMenuToggle{display:none}
+#mobileMenuPanel{display:contents}
 #installAppButton{white-space:nowrap;min-height:44px}
 input,select,textarea{max-width:100%;min-width:0}
 dialog{max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
@@ -15,6 +17,17 @@ dialog{max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
   .card .entry{flex-wrap:wrap}.demo-banner{flex-wrap:wrap}
 }
 @media(max-width:700px){
+  .sidebar{display:grid;grid-template-columns:minmax(0,1fr) 44px;align-items:center;gap:0 12px}
+  .sidebar .brand{padding:0;justify-self:start}
+  #mobileMenuToggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;padding:10px;background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--ink);justify-self:end}
+  #mobileMenuToggle span{width:20px;height:2px;border-radius:2px;background:currentColor}
+  #mobileMenuPanel{display:none;grid-column:1/-1;max-height:70dvh;overflow:auto;overscroll-behavior:contain;padding-top:12px}
+  .mobile-menu-open #mobileMenuPanel{display:block}
+  #mobileMenuPanel #navigation{display:block;overflow:visible;margin-top:12px}
+  #mobileMenuPanel #navigation>:not(.mobile-navigation){display:block!important}
+  #mobileMenuPanel #navigation>button{display:flex!important;align-items:center;gap:12px;width:100%;white-space:normal}
+  #mobileMenuPanel #navigation .mobile-navigation{display:none!important}
+  #mobileMenuPanel .sidebar-bottom{margin-top:12px}
   body{font-size:15px}.sidebar{padding:16px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left))}
   nav{display:block;margin-top:12px;overflow:visible}nav>:not(.mobile-navigation){display:none!important}
   nav .mobile-navigation{display:block;margin:0;font-size:12px;letter-spacing:normal;color:var(--muted)}
@@ -35,4 +48,4 @@ dialog{max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
   .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:360px){.stats{grid-template-columns:1fr}.header-actions{justify-content:flex-start;gap:5px}}
-@media print{#installAppButton,.mobile-navigation{display:none!important}}
+@media print{#installAppButton,.mobile-navigation,#mobileMenuToggle,#mobileMenuPanel{display:none!important}}

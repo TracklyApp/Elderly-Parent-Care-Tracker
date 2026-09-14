@@ -1,5 +1,16 @@
 /* Responsive navigation and platform-aware installation help. */
 (()=>{
+  const sidebar=$('.sidebar'),brand=sidebar.querySelector('.brand'),menu=document.createElement('div'),toggle=document.createElement('button');
+  menu.id='mobileMenuPanel';toggle.id='mobileMenuToggle';toggle.type='button';toggle.setAttribute('aria-controls',menu.id);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');toggle.innerHTML='<span></span><span></span><span></span>';
+  for(const child of [...sidebar.children])if(child!==brand)menu.append(child);
+  sidebar.append(toggle,menu);
+  const phone=matchMedia('(max-width:700px)');
+  function closeMenu(focus=false){sidebar.classList.remove('mobile-menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');if(focus&&phone.matches)toggle.focus();}
+  toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';sidebar.classList.toggle('mobile-menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');});
+  document.addEventListener('click',event=>{if(!phone.matches)return;if(!sidebar.contains(event.target)){closeMenu();return;}if(menu.contains(event.target)&&event.target.closest('[data-view]'))closeMenu(true);},true);
+  document.addEventListener('change',event=>{if(phone.matches&&menu.contains(event.target)&&['journalNavigation','mobileNavigation','profilePicker'].includes(event.target.id))closeMenu(true);},true);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){event.preventDefault();closeMenu(true);}});
+  phone.addEventListener('change',()=>closeMenu());
   const previousNav=nav;
   nav=function(){
     previousNav();
